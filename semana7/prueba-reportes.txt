@@ -1,0 +1,24 @@
+Al consultar los reportes con GET /reportes:
+
+La ruta GET /reportes devuelve un array JSON con todos los reportes que han sido registrados en el servidor. 
+Cuando se realiza la consulta, el servidor accede al array "reportes" que se encuentra almacenado en memoria 
+y lo envía como respuesta en formato JSON.
+
+En el ejemplo proporcionado, cuando se consulta GET /reportes después de registrar el primer reporte, 
+se obtiene una respuesta que contiene:
+
+[
+  {
+    "id": 1,
+    "tipo": "Infraestructura",
+    "descripcion": "Daño en alumbrado público"
+  }
+]
+
+Cada reporte contiene:
+- id: Un identificador único basado en la posición en el array
+- tipo: La categoría del reporte (Infraestructura, Ambiente, etc.)
+- descripcion: El detalle del problema reportado
+
+Los reportes se almacenan temporalmente en memoria mientras el servidor esté ejecutándose. 
+Si detienes el servidor, se pierden todos los datos.
